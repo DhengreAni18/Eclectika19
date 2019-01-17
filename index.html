@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cervooo</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--Font-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Creepster" rel="stylesheet">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Atma:400,500" rel="stylesheet">-->
+    <link href="use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/cervooo.css">
+    <link rel="icon" href="images/cervooo_ico.png" />
+    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="js/lib/greensock/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/scrollmagic/uncompressed/ScrollMagic.js"></script>
+    <script type="text/javascript" src="js/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+    <script type="text/javascript" src="js/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+    <meta name="google-site-verification" content="zbm9WyDFFfBVJNO5IpHeT8OGUQ6ZiQPbQ8V2kfmx42E" />
+</head>
+<script src="cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<body>
+<div class="loader">
+    <div>
+        <img src="images/loader.gif" alt="">
+    </div>
+    <div class="text-loader">
+        Chargement...
+    </div>
+</div>
+<a href="https://onepagelove.com" style="display: inline-block; position: fixed; left: 0; top: 100px; z-index:999999;"><img width="73" height="56" src="s3.amazonaws.com/onepagelove/one-page-love-award-retina-left.png" srcset="https://s3.amazonaws.com/onepagelove/one-page-love-award-left.png 1x , s3.amazonaws.com/onepagelove/one-page-love-award-retina-left.png 2x" alt="One Page Love Award"></a>
+<div class="scrollContent">
+    <section class="demo" id="bezier">
+        <div class="spacer s2"></div>
+        <div class="spacer s0" id="trigger"></div>
+        <div class="fleche layer" data-depth="0"></div>
+        <div id="scene">
+            <div class="bg_lune layer" data-depth="0"></div>
+            <div class="bg_nuage1 layer" data-depth="0.02"></div>
+            <div class="bg_montagne layer" data-depth="0.1"></div>
+            <div class="bg_chateau layer" data-depth="0.2"></div>
+            <div class="bg_logo layer text-center" data-depth="0.01">DEVELOPPEUR DE SITES EXTRANET & INTERNET</div>
+            <div class="bg_tombes3 layer" data-depth="0.28"></div>
+            <div class="bg_tombes2 layer" data-depth="0.4"></div>
+            <div class="bg_arbre layer" data-depth="0.5"></div>
+            <div class="bg_tombes4 layer" data-depth="0.6"></div>
+            <div class="bg_avant layer" data-depth="0.8"></div>
+            <div class="corbeau layer" data-depth="0.8"></div>
+            <div class="cache layer" data-depth="0.8"></div>
+            <div class="bg_vignettage layer" data-depth="0"></div>
+            <div id="target" class="layer" data-depth="1" >
+                <img id="plane" src="images/grande_main.png"/>
+            </div>
+            <div class="cache_terre layer" data-depth="0"></div>
+        </div>
+        <div class="spacer s2"></div>
+        <script>
+            $(function () { // wait for document ready
+                var flightpath = {
+                    entry : {
+                        autoRotate: false,
+                        values: [
+                            {x:0 , y: 0},
+                            {x:0 , y: -850}
+                        ]
+                    },
+                    pause : {
+                        autoRotate: false,
+                        values: [
+                            {x:0 , y: -850},
+                            {x:0 , y: -850}
+                        ]
+                    }
+                };
+                // init controller
+                var controller = new ScrollMagic.Controller();
+                // create tween
+                var tween = new TimelineMax()
+                    .add(TweenMax.to($("#plane"), 3, {css:{bezier:flightpath.entry}, ease:Power1.easeInOut}))
+                    .add(TweenMax.to($("#plane"), 1, {css:{bezier:flightpath.pause}, ease:Power1.easeInOut}))
+                // build scene
+                var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 2000, triggerHook: "onLeave"})
+                    .setPin("#scene")
+                    .setTween(tween)
+                    // .addIndicators() // add indicators (requires plugin)
+                    .addTo(controller);
+            })
+        </script>
+    </section>
+    <div class="spacer s_viewport"></div>
+</div>
+<section id="sect_effrayant">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center my-auto">
+                <img src="images/Illus-diable.png" alt="" id="illus_effrayant">
+            </div>
+            <div class="col-lg-4 offset-lg-1 text-center">
+                <img src="images/Texte-effrayant.png" alt="" id="text_effrayant">
+                <p class="text-left">Un réseau extranet/intranet permet à une entreprise de <span>rendre plus efficaces les interactions avec ses différentes parties prenantes</span> tout en garantissant la sécurité des données partagées. Votre réseau Extranet/Intranet améliore sensiblement l'organisation de votre infrastructure professionnelle.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--peur desktop-->
+<section id="sect_peur" class="d-none d-lg-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-1 text-center">
+                <img src="images/Texte-Peur.png" alt="" id="text_peur">
+                <p class="text-left">Que vous soyez une petite ou grande structure, avoir une présence en ligne est aujourd’hui essentiel pour <span>gagner en crédibilité</span> et <span>communiquer avec vos potentiels clients</span>. Valorisez votre activité et présentez vos produits et services à vos clients avec <span>un site clair et adapté à vos besoins</span>. </p>
+            </div>
+            <div class="col-lg-5 text-center my-auto">
+                <div id="illus_cimetiere">
+                    <div class="bras"></div>
+                    <div class="tete"></div>
+                </div>
+            </div>
+            <div class="col-lg-1">
+                <div class="doigts"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--peur mobile-->
+<section id="sect_peur_mob" class="d-lg-none">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <img src="images/Illus-1.png" alt="" id="illus_peur_mob">
+            </div>
+            <div class="col-12 text-center">
+                <img src="images/Texte-Peur.png" alt="" id="text_peur">
+            </div>
+            <div class="col-12 text-center">
+                <p class="text-left">Que vous soyez une petite ou grande structure, avoir une présence en ligne est aujourd’hui essentielle pour <span>gagner en crédibilité</span> et <span>communiquer avec vos potentiels clients</span>. Valorisez votre activité et présentez vos produits et services à vos clients avec <span>un site claire et adapté à vos besoins</span>. </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="sect_pas">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center my-auto" >
+                <img src="images/Illus-2.png" alt="" id="illus_pas">
+            </div>
+            <div class="col-lg-4 offset-lg-1 text-center">
+                <img src="images/Text-pas.png" alt="" id="text_pas">
+                <p class="text-left">Chaque projet a ses propres problématiques,  je développe votre site Internet ou vos applications après <span>discussion et analyse de votre process de travail</span>. Nous avançons ensemble étape par étape pour créer l’outil numérique qui répondra à vos attentes et <span>facilitera votre travail au quotidien</span>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="sect_expertise">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>une Expertise ciblée</h1>
+                <p>Je mets à votre disposition mes compétences pour réaliser des sites fiables, accessibles et sécurisés.</p>
+            </div>
+            <div class="col-lg-4 text-center expert_tombe ">
+                <img class="tombe_langage" src="images/tombe_2001.png" alt="">
+                <h2>langages</h2>
+                <p>Html, php, javascript, jquery</p>
+            </div>
+            <div class="col-lg-4 text-center expert_tombe">
+                <img class="tombe_framwork" src="images/tombe_2002.png" alt="">
+                <h2>framework</h2>
+                <p>Laravel, Codeigniter, Symfony 4</p>
+            </div>
+            <div class="col-lg-4 text-center expert_tombe">
+                <img src="images/tombe_2003.png" alt="">
+                <h2>rendu 3D</h2>
+                <p>WebGL</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="sect_qui">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center my-auto" >
+                <img src="images/Illus-3.png" alt="" id="illus_qui">
+            </div>
+            <div class="col-lg-5 offset-xl-1 text-center">
+                <img src="images/Text-Qui.png" alt="" id="text_qui">
+                <p class="col-12 text-left">Cervooo est une entreprise créée par <span>Franck Haegeli, développeur à Saint-Étienne</span>. Franck découvre l’informatique à l’âge de 10 ans avec son premier ordinateur, il est tout de suite séduit et commence à programmer des bases de données. Il poursuit naturellement ses études dans la filière scientifique. Un bac S avec mention en poche, il s’engage dans l'armée  (allez savoir pourquoi) et devient reporter de guerre. Il parcourt le monde pour photographier et filmer les militaires français dans les zones de conflits. De retour dans le civil, il décide de revenir à sa première passion et devient développeur d’applications web et de sites internet. <span>Combinant à la fois les qualités d’un technicien et d’un chef de projet</span>, Franck sait écouter ses clients et les conseille, pour réaliser des sites qui répondent à leurs attentes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="sect_contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-left">
+                <img src="images/Illus_20main.png" id="illus_contact" alt="">
+                <h1>contactez-moi</h1>
+                <p>Si vous avez des questions ou que vous souhaitez me faire part de votre projet, contactez-moi, nous pouvons aussi nous rencontrer autour d’un café.</p>
+                <p>Cervooo<br/>Grande Usine Créative<br/>10 rue Marius Patinaud<br/>42000 Saint-Étienne
+                    <br/><span>—</span></p>
+                <p>Tél. 06 50 63 28 09<br/>Email : franck@cervooo.com</p>
+            </div>
+            <div class="col-lg-6 contact_formulaire">
+                <form action="test.html" method="POST">
+                    <input type="text" class="form-control form-control-lg" id="inputNom" aria-describedby="nameHelp" placeholder="nom" name="nom">
+                    <input type="email" class="form-control form-control-lg" id="inputEmail" aria-describedby="emailHelp" placeholder="Email" name="mail">
+                    <textarea class="form-control form-control-lg" id="inputMessage" rows="5" placeholder="Message" name="message"></textarea>
+                    <button type="submit" class="btn btn-lg float-right">ENVOYER</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="footer_plafond"></div>
+    <div class="container">
+        <div class="row">
+            <div class="d-flex flex-sm-row flex-column p-0">
+                <div class="text-left flex-item ml-4">
+                    <img src="images/logo_cervooo_zombie-silhouette.svg" alt="">
+                </div>
+                <div class="text-left flex-item item-1 ml-4 d-none d-md-block">
+                    <h3 class="titre">cervooo</h3>
+                    <h4>Développeur spécialisée dans la création de site internet, extranet, et Intranet à Saint-Étienne, Auvergne Rhône-Alpes</h4>
+                </div>
+                <div class="text-left flex-item ml-4">
+                    <h3 class="titre">contactez-moi</h3>
+                    <h4>cervooo<br/>
+                        10 rue Marius Patinaud<br/>
+                        42000 Saint-Étienne<br/>
+                        —<br/>
+                        06 50 63 28 09<br/>
+                        franck@cervooo.com</h4>
+                </div>
+                <div class="text-left flex-item ml-4 d-none d-md-block">
+                    <h3 class="titre">compétences</h3>
+                    <h4>
+                        Site internet<br/>
+                        Extranet<br/>
+                        Intranet<br/>
+                        Annuaires<br/>
+                        Espaces collaboratifs<br/>
+                        Gestion de contenu
+                    </h4>
+                </div>
+                <div class="text-left flex-item ml-4 d-none d-md-block">
+                    <h3 class="titre">&nbsp;</h3>
+                    <h4>
+                        Partage de planning<br/>
+                        Gestion des tâches<br/>
+                        Base documentaire<br/>
+                        Forum<br/>
+                        CRM<br/>
+                    </h4>
+                </div>
+                <div class="text-left flex-item ml-4">
+                    <h3 class="titre">suivez-moi</h3>
+                    <a href="https://www.facebook.com/cervooo.agency">
+                        <i class="fab fa-facebook-square fa-3x"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/franckhaegeli/">
+                        <i class="fab fa-linkedin fa-3x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_sol"></div>
+    <div class="col-12 text-center copyright">
+        <a href="https://cabaroc.com/" target="_blank">Design by Cabaroc</a>
+    </div>
+</footer>
+<!--Loader-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script type="text/javascript">
+    $(window).load(function() {
+        $(".loader").fadeOut("1000");
+        $(".fleche").show()
+    })
+</script>
+<script src="stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+    var scene = document.getElementById('scene');
+    var parallaxInstance = new Parallax(scene, {
+        selector: '.layer',
+    });
+</script>
+<script>
+    $(function() {
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+            if (scroll >= 400) {
+                $('.fleche').fadeOut("500");
+                }
+            else {
+                $('.fleche').fadeIn("200");
+            }
+        });
+    })
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="www.googletagmanager.com/gtag/js_id_UA-126287884-1.js"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-126287884-1');
+</script>
+</body>
+</html>

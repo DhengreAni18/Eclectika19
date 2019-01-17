@@ -1,0 +1,1 @@
+a:1:{s:9:"test.html";a:1:{i:0;s:41:"images/logo_cervooo_zombie-silhouette.svg";}}
